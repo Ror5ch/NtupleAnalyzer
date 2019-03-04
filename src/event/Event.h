@@ -8,6 +8,8 @@
 #include "particle/Electron.h"
 #include "particle/Muon.h"
 #include "particle/Photon.h"
+#include "particle/Proton.h"
+#include "particle/LocalTrack.h"
 #include "particle/GenParticle.h"
 #include "trigger/TriggerResult.h"
 
@@ -28,6 +30,8 @@ public:
     void SetElectrons(std::vector<Electron>&& electrons);
     void SetMuons(std::vector<Muon>&& muons);
     void SetPhotons(std::vector<Photon>&& photons);
+    void SetProtons(std::vector<Proton>&& protons);
+    void SetLocalTracks(std::vector<LocalTrack>&& local_tracks);
     void SetGenParticles(std::vector<GenParticle>&& gen_particles);
 
     const int& RunNumber() const;
@@ -41,6 +45,8 @@ public:
     const std::vector<Electron>& Electrons() const;
     const std::vector<Muon>& Muons() const;
     const std::vector<Photon>& Photons() const;
+    const std::vector<Proton>& Protons() const;
+    const std::vector<LocalTrack>& LocalTracks() const;
     const std::vector<GenParticle>& GenParticles() const;
 private:
     int _run_number;
@@ -54,6 +60,8 @@ private:
     std::vector<Electron> _electrons;
     std::vector<Muon> _muons;
     std::vector<Photon> _photons;
+    std::vector<Proton> _protons;
+    std::vector<LocalTrack> _local_tracks;
     std::vector<GenParticle> _gen_particles;
 };
 

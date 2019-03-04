@@ -6,8 +6,8 @@ endif
 
 TARGET = ../bin/Analyze
 
-$(TARGET) : Particle.o Electron.o Muon.o Photon.o GenParticle.o TriggerResult.o Event.o EventBuffer.o EventHandle.o EventSelector.o ZGSelector.o RoccoR.o EventAnalyzer.o MakeAnalyzer.o JobConfiguration.o Main.o
-	$(CXX) -o $(TARGET) Particle.o Electron.o Muon.o Photon.o GenParticle.o TriggerResult.o Event.o EventBuffer.o EventHandle.o EventSelector.o ZGSelector.o RoccoR.o EventAnalyzer.o MakeAnalyzer.o JobConfiguration.o Main.o
+$(TARGET) : Particle.o Electron.o Muon.o Photon.o Proton.o LocalTrack.o GenParticle.o TriggerResult.o Event.o EventBuffer.o EventHandle.o EventSelector.o ZGSelector.o RoccoR.o EventAnalyzer.o MakeAnalyzer.o JobConfiguration.o Main.o
+	$(CXX) -o $(TARGET) Particle.o Electron.o Muon.o Photon.o Proton.o LocalTrack.o GenParticle.o TriggerResult.o Event.o EventBuffer.o EventHandle.o EventSelector.o ZGSelector.o RoccoR.o EventAnalyzer.o MakeAnalyzer.o JobConfiguration.o Main.o
 
 Particle.o : particle/Particle.cc particle/Particle.h
 	$(CXX) -c -o Particle.o particle/Particle.cc
@@ -20,6 +20,12 @@ Muon.o : particle/Muon.cc particle/Muon.h
 
 Photon.o : particle/Photon.cc particle/Photon.h
 	$(CXX) -c -o Photon.o particle/Photon.cc
+
+Proton.o : particle/Proton.cc particle/Proton.h
+	$(CXX) -c -o Proton.o particle/Proton.cc
+
+LocalTrack.o : particle/LocalTrack.cc particle/LocalTrack.h
+	$(CXX) -c -o LocalTrack.o particle/LocalTrack.cc
 
 GenParticle.o : particle/GenParticle.cc particle/GenParticle.h
 	$(CXX) -c -o GenParticle.o particle/GenParticle.cc

@@ -48,6 +48,14 @@ void Event::SetGenParticles(std::vector<GenParticle>&& gen_particles)
 {
     _gen_particles = std::move(gen_particles);
 }
+void Event::SetProtons(std::vector<Proton>&& protons)
+{
+    _protons = std::move(protons);
+}
+void Event::SetLocalTracks(std::vector<LocalTrack>&& local_tracks)
+{
+    _local_tracks = std::move(local_tracks);
+}
 const int& Event::RunNumber() const
 {
     return _run_number;
@@ -111,6 +119,14 @@ const std::vector<Muon>& Event::Muons() const
 const std::vector<Photon>& Event::Photons() const
 {
     return _photons;
+}
+const std::vector<Proton>& Event::Protons() const
+{
+    return _protons;
+}
+const std::vector<LocalTrack>& Event::LocalTracks() const
+{
+    return _local_tracks;
 }
 const std::vector<GenParticle>& Event::GenParticles() const
 {
